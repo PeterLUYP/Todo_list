@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="~/railsbridge/todo_list/app/assets/stylesheets/app.js"></script>
+</head>
+<h1>To-do list</h1>
+<%= link_to "New event", new_event_path %>
+
+<% @events.each do|event|%>
+<div>
+<%= link_to event.title, event_path(event) %>
+<%= link_to "Edit event", edit_event_path(event) %>
+<%= link_to "Delete event", event_path(event), method: "delete"%>
+<button id="btn">Done</button>
+</div>
+<%end%>
+
